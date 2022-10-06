@@ -1,5 +1,5 @@
   Vagrant.configure("2") do |config|
-    config.vm.box = "generic/ubuntu"
+    config.vm.box = "generic/ubuntu2004"
     config.vm.synced_folder "docker-cont/", "/opt/docker"
     config.vm.provider "virtualbox" do |v|
       v.name = "ubuntu2004"
