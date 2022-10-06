@@ -1,0 +1,12 @@
+---
+- name: Install docker
+  hosts: all
+  become: yes
+  
+  tasks:
+    - name: Update apt cache
+      apt: update_cache=true
+
+    - name: Install docker, docker-compose, prometheus-node-exporter
+      apt: 
+         pkg: ["docker", "docker-compose", "prometheus-node-exporter"]
