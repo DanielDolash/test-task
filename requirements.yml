@@ -1,6 +1,4 @@
 ---
+
 collections:
-  - name: ssh://git@github.com:ansible-collections/community.docker.git
-    type: git
-roles:
-  - cloudalchemy.node_exporter
+  - name: community.docker

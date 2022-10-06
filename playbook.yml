@@ -4,9 +4,13 @@
   become: yes
   
   tasks:
-    - name: Update apt cache
-      apt: update_cache=true
 
     - name: Install docker, docker-compose, prometheus-node-exporter
       apt: 
+         update_cache: true
          pkg: ["docker", "docker-compose", "prometheus-node-exporter"]
+
+    - name: Starting docker containers 
+      community.docker.docker_compose:
+        project_src: /opt/docker
+        build: yes
